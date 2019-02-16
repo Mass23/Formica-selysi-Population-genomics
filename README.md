@@ -8,4 +8,4 @@
 
 ### 3. Fst / Tajima's D / Ka/Ks
 
-### 4. McDonald-Kreitman tests
+### 4. McDonald-Kreitman tests
