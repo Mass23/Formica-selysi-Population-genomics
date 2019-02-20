@@ -35,7 +35,7 @@ Filtering on mapping quality (Not too stringent as Sp haplotype of the supergene
 Reference:
 - BCFtools filter (Samtools v1.8): https://academic.oup.com/bioinformatics/article/25/16/2078/204688
 
-### 4. Social-form PCA
+### 4. Social-form PCA
 Plink command (v1.9): plink --vcf file.vcf --pca
 Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/plot_pca.py)
 - To change colors according to results
