@@ -34,14 +34,16 @@ References:
 
 ### 3. Variants filtering
 Depth and quality:
-- 5 < DP or even 10?
-- 30 < Qual or even 50?
+- 5 < DP
+- 30 < Qual
 
 Minor allele frequency (has been shown not to be efficient to improve MKR results: https://www.pnas.org/content/110/21/8615):
 - 0.05 < MAF
 
-Filtering on mapping quality (Not too stringent as Sp haplotype of the supergene largely differing from the Sm one):
+Filtering on mapping quality (Not too stringent as Sp haplotype of the supergene largely differs from the Sm one):
 - MQ < 30 or 20?
+
+Filtering on strand bias? Other GATK best practices metrics?
 
 Reference:
 - BCFtools filter (Samtools v1.8): https://academic.oup.com/bioinformatics/article/25/16/2078/204688
