@@ -50,8 +50,6 @@ for (row in 1:nrow(mkt_results)) {
   mkt_results[row, 'Tsil'] = data_others[which(data_others$gene_id == mkt_results[row, 'gene_id']), 'Tsil']
   mkt_results[row, 'Trepl'] = data_others[which(data_others$gene_id == mkt_results[row, 'gene_id']), 'Trepl']
 }
-# FINAL DATASET
-mkt_results = mkt_results[0:522,]
 
 #################################################################
 # SnIPRE
