@@ -56,3 +56,10 @@ Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/pl
 Reference:
 - http://pngu.mgh.harvard.edu/purcell/plink/
 
+### ?. McDonald-Kreitman tests
+Script to get Tsil and Trep: python?
+Script to SnIPRE: [popgenome.R](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/popgenome.R)
+
+References:
+- https://academic.oup.com/mbe/article/31/7/1929/2925788
+- https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002806
