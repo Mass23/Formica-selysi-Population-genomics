@@ -3,6 +3,7 @@
 ## Methods
 
 ### 1. Reads processing
+Script: [reads_preprocessing.py](https://github.com/Mass23/FormicaSelysiBalSel/reads_preprocessing.py)
 
 ### 2. Variants calling
 
