@@ -58,7 +58,7 @@ Reference:
 
 ### ?. McDonald-Kreitman tests
 Script to get Tsil and Trep: python?
-Script to SnIPRE: [popgenome.R](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/popgenome.R)
+Script to SnIPRE: [pop_genome.R](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/pop_genome.R)
 
 References:
 - https://academic.oup.com/mbe/article/31/7/1929/2925788
