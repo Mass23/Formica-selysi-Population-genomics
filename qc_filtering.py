@@ -6,8 +6,8 @@ import argparse
 # python3 QC_filtering.py -r RAW_FILE -f FILTERED_FILE
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-r', '--RawVCF', help='Reference genome fasta file used for mapping', type=str, action = 'store', required = True)
-parser.add_argument('-f', '--FilteredVCF', help='Number of cores to use', type=int, action = 'store', required = True)
+parser.add_argument('-r', '--RawVCF', help='Raw VCF file', type=str, action = 'store', required = True)
+parser.add_argument('-f', '--FilteredVCF', help='Filtered VCF file', type=int, action = 'store', required = True)
 
 args = parser.parse_args()
 
