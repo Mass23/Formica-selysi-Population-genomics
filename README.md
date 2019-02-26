@@ -33,23 +33,26 @@ References:
 - Multiprocessing in python (v3.7): https://docs.python.org/3.7/library/multiprocessing.html
 
 ### 3. Variants filtering
-Depth and quality:
+1 - Keep only SNPs
+
+2 - Depth and quality:
 - 5 < DP
 - 30 < Qual
 
-Minor allele frequency (has been shown not to be efficient to improve MKR results: https://www.pnas.org/content/110/21/8615):
-- 0.05 < MAF
-
-Filtering on mapping quality (Not too stringent as Sp haplotype of the supergene largely differs from the Sm one):
+3 - Filtering on mapping quality (Not too stringent as Sp haplotype of the supergene largely differs from the Sm one):
 - MQ < 30 or 20?
 
-Filtering on strand bias? Other GATK best practices metrics?
+4 - Filtering on strand bias:
+- FS > 60.0
+- MQRankSum < -12.5
+- ReadPosRankSum < -8.0
 
 Reference:
 - BCFtools filter (Samtools v1.8): https://academic.oup.com/bioinformatics/article/25/16/2078/204688
 
 ### 4. Social-form PCA
 Plink command (v1.9): plink --vcf file.vcf --pca
+
 Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/plot_pca.py)
 - To change colors according to results
 
