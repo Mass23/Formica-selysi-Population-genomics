@@ -36,11 +36,10 @@ References:
 1 - Keep only SNPs
 
 2 - Depth and quality:
-- 5 < DP
-- 30 < Qual
+- QD < 5.0
 
 3 - Filtering on mapping quality (Not too stringent as Sp haplotype of the supergene largely differs from the Sm one):
-- MQ < 30 or 20?
+- MQ < 20
 
 4 - Filtering on strand bias:
 - FS > 60.0
