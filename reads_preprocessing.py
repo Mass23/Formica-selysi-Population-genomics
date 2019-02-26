@@ -16,12 +16,18 @@ print("Reference: ", ref)
 # Create needed indexes
 try:
     subprocess.call('bwa index ' + ref, shell = True)
+except:
+    pass
 
 try:
     subprocess.call('picard-tools CreateSequenceDictionary MAX_RECORDS_IN_RAM=null R=' + ref + ' O=' + ref.split('.')[0] + '.dict', shell = True)
+except:
+    pass
 
 try:
     subprocess.call('samtools faidx ' + ref, shell = True)
+except:
+    pass
 
 fastq_list = glob.glob('*.fastq.gz')
 fastqfile = fastq_list[0]
