@@ -22,8 +22,7 @@ data_inputs = []
 
 with open(ref_fasta, "rU") as handle:
     for record in SeqIO.parse(handle, "fasta"):
-        if record.id.startswith('Fsel'):
-            data_inputs.append(record.id)
+        data_inputs.append(record.id)
 
 def process_scaffold(scaffold):
     args_freebayes = ['freebayes', '--region', scaffold, '-f', ref_fasta, bam_file, '>', scaffold + '.vcf']
