@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('-r', '--ReferenceFasta', help='Reference genome fasta file used for mapping', type=str, action = 'store', required = True)
 parser.add_argument('-n', '--NumberCores', help='Number of cores to use', type=int, action = 'store', required = True)
-parser.add_argument('-b', '--BamFile', help='Bam file with individuals merged', type=int, action = 'store', required = True)
+parser.add_argument('-b', '--BamFile', help='Bam file with individuals merged', type=str, action = 'store', required = True)
 
 args = parser.parse_args()
 
