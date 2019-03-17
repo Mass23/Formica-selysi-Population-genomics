@@ -1,8 +1,8 @@
 # Formica Selysi - Signs of selection on the supergene
 
-## 1. Preprocessing
+## 1 - Preprocessing
 
-### 1.1 Reads processing
+### 1.1 - Reads processing
 Script: [reads_preprocessing.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/reads_preprocessing.py)
 
 References:
@@ -10,7 +10,7 @@ References:
 - BWA mem (v0.7.17): https://arxiv.org/abs/1303.3997
 - Picard MarkDuplicates (v2.18.11): http://broadinstitute.github.io/picard
 
-### 1.2 Variants calling
+### 1.2 - Variants calling
 Merge bam files: samtools merge (https://academic.oup.com/bioinformatics/article/25/16/2078/204688, v1.8)
 
 Script: [variants_calling.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/variants_calling.py)
@@ -27,7 +27,7 @@ References:
 - Freebayes (v1.2.0):  https://arxiv.org/abs/1207.3907
 - Multiprocessing in python (v3.7): https://docs.python.org/3.7/library/multiprocessing.html
 
-### 1.3 Variants filtering
+### 1.3 - Variants filtering
 1 - Keep only SNPs
 
 2 - Depth and quality:
@@ -44,7 +44,7 @@ References:
 Reference:
 - BCFtools filter (Samtools v1.8): https://academic.oup.com/bioinformatics/article/25/16/2078/204688
 
-### 1.4 Social-form PCA
+### 1.4 - Social-form PCA
 Plink command (v1.9): 
 ```plink --vcf file.vcf --pca```
 
@@ -54,11 +54,11 @@ Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/pl
 Reference:
 - http://pngu.mgh.harvard.edu/purcell/plink/
 
-## 2. Analysis
+## 2 - Analysis
 
-### 2.1 Region-based analysis
+### 2.1 - Region-based analysis
 
-### 2.1.1 Fst and Tajima's D analysis
+### 2.1.1 - Fst and Tajima's D analysis
 
 Genome-wide scans (20kbp):
 - Tajima's D as a measure of balancing selection
@@ -94,11 +94,11 @@ Genome-wide scans (20kbp):
       
 Script: [manhattan_plot.py]()
 
-### 2.1.2 Site-frequency spectrum
+### 2.1.2 - Site-frequency spectrum
 
-### 2.2 Gene-based analysis
+### 2.2 - Gene-based analysis
 
-### 2.2.1 McDonald-Kreitman tests
+### 2.2.1 - McDonald-Kreitman tests
 Script to get Tsil and Trep: python?
 Script to SnIPRE: [pop_genome.R](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/pop_genome.R)
 
