@@ -76,7 +76,8 @@ Genome-wide scans (20kbp):
 ```vcftools --vcf VCF_FILE.vcf --TajimaD 20000 --out Sm_Sp_20kbp```
 
 ***
-**Stats and plot of the Fst and Tajima's D analysis***
+## Stats and plot of the Fst and Tajima's D analysis
+
 - Manhattan plot of the Scaffold03 with Scaffold01 as comparison 
 - A: Tajima's D
 - B: Fst 
