@@ -58,9 +58,12 @@ Reference:
 
 ### 2.1 Region-based analysis
 
-### 2.1.1 Fst analysis
+### 2.1.1 Fst and Tajima's D analysis
 
 Genome-wide scans (20kbp):
+- Tajima's D as a measure of balancing selection
+```vcftools --vcf VCF_FILE.vcf --TajimaD 20000 --out Sm_Sp_20kbp```
+
 - Fst as a measure of divergence between Sm and Sp
 ```vcftools --vcf VCF_FILE.vcf --weir-fst-pop Sm.txt --weir-fst-pop Sp.txt --fst-window-size 20000 --out Sm_Sp_20kbp```
 
@@ -70,25 +73,28 @@ Genome-wide scans (20kbp):
 - Fst as a measure of conservation within sp
 ```vcftools --vcf VCF_FILE.vcf --weir-fst-pop Sp.txt --fst-window-size 20000 --out Sp_20kbp```
 
-### 2.1.2 Tajima's D analysis
-
-Genome-wide scans (20kbp):
-```vcftools --vcf VCF_FILE.vcf --TajimaD 20000 --out Sm_Sp_20kbp```
-
-***
-## Stats and plot of the Fst and Tajima's D analysis
+**Output:**
 
 - Manhattan plot of the Scaffold03 with Scaffold01 as comparison 
-- A: Tajima's D
-- B: Fst 
-      - (1) Sm and Sp divergence 
-      - (2) Conservation within Sm 
-      - (3) Conservation within Sp
+      - A: Tajima's D
+      - B: Fst 
+            - (1) Sm and Sp divergence 
+            - (2) Conservation within Sm 
+            - (3) Conservation within Sp
+      
+- Stats file with summary statistice for the following regions:
+      - Inversion A
+      - Inversion B
+      - Inversion C
+      - Inversion D
+      - Centromere
+      - Inversion breakpoints
+      - Pseudo-autosomal regions
+      - Rest of the genome
       
 Script: [manhattan_plot.py]()
-***
 
-### 2.1.3 Site-frequency spectrum
+### 2.1.2 Site-frequency spectrum
 
 ### 2.2 Gene-based analysis
 
