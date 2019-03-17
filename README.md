@@ -18,15 +18,10 @@ Script: [variants_calling.py](https://github.com/Mass23/FormicaSelysiBalSel/blob
 - No filtering in freebayes leading to large memory usage (approx. 16g per core needed). To reduce memory usage, reducing the number of alleles considered per site and filtering on depth/quality/mapping quality can be added.
 
 - Picard CreateSequenceDictionary:
-java -jar picard.jar CreateSequenceDictionary \ 
-      R=reference.fasta \ 
-      O=reference.dict
+```java -jar picard.jar CreateSequenceDictionary R=reference.fasta O=reference.dict```
 
 - Picard SortVcf:
-java -jar picard.jar SortVcf \
-      I=raw_variants.vcf \
-      SEQUENCE_DICTIONARY=reference.dict \
-      O=sorted_variants.vcf
+```java -jar picard.jar SortVcf I=raw_variants.vcf SEQUENCE_DICTIONARY=reference.dict O=sorted_variants.vcf```
 
 References:
 - Freebayes (v1.2.0):  https://arxiv.org/abs/1207.3907
@@ -50,7 +45,8 @@ Reference:
 - BCFtools filter (Samtools v1.8): https://academic.oup.com/bioinformatics/article/25/16/2078/204688
 
 ### 1.4 Social-form PCA
-Plink command (v1.9): plink --vcf file.vcf --pca
+Plink command (v1.9): 
+```plink --vcf file.vcf --pca```
 
 Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/plot_pca.py)
 - To change colors according to results
@@ -74,12 +70,22 @@ Genome-wide scans (20kbp):
 - Fst as a measure of conservation within sp
 ```vcftools --vcf VCF_FILE.vcf --weir-fst-pop Sp.txt --fst-window-size 20000 --out Sp_20kbp```
 
-
 ### 2.1.2 Tajima's D analysis
 
 Genome-wide scans (20kbp):
 ```vcftools --vcf VCF_FILE.vcf --TajimaD 20000 --out Sm_Sp_20kbp```
 
+***
+**Stats and plot of the Fst and Tajima's D analysis***
+- Manhattan plot of the Scaffold03 with Scaffold01 as comparison 
+- A: Tajima's D
+- B: Fst 
+      - (1) Sm and Sp divergence 
+      - (2) Conservation within Sm 
+      - (3) Conservation within Sp
+      
+Script: [manhattan_plot.py]()
+***
 
 ### 2.1.3 Site-frequency spectrum
 
