@@ -1,8 +1,8 @@
 # Formica Selysi - Signs of selection on the supergene
 
-## Methods
+## 1. Preprocessing
 
-### 1. Reads processing
+### 1.1 Reads processing
 Script: [reads_preprocessing.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/reads_preprocessing.py)
 
 References:
@@ -10,7 +10,7 @@ References:
 - BWA mem (v0.7.17): https://arxiv.org/abs/1303.3997
 - Picard MarkDuplicates (v2.18.11): http://broadinstitute.github.io/picard
 
-### 2. Variants calling
+### 1.2 Variants calling
 Merge bam files: samtools merge (https://academic.oup.com/bioinformatics/article/25/16/2078/204688, v1.8)
 
 Script: [variants_calling.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/variants_calling.py)
@@ -32,7 +32,7 @@ References:
 - Freebayes (v1.2.0):  https://arxiv.org/abs/1207.3907
 - Multiprocessing in python (v3.7): https://docs.python.org/3.7/library/multiprocessing.html
 
-### 3. Variants filtering
+### 1.3 Variants filtering
 1 - Keep only SNPs
 
 2 - Depth and quality:
@@ -49,7 +49,7 @@ References:
 Reference:
 - BCFtools filter (Samtools v1.8): https://academic.oup.com/bioinformatics/article/25/16/2078/204688
 
-### 4. Social-form PCA
+### 1.4 Social-form PCA
 Plink command (v1.9): plink --vcf file.vcf --pca
 
 Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/plot_pca.py)
@@ -58,10 +58,39 @@ Plot: [plot_pca.py](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/pl
 Reference:
 - http://pngu.mgh.harvard.edu/purcell/plink/
 
-### ?. McDonald-Kreitman tests
+## 2. Analysis
+
+### 2.1 Region-based analysis
+
+### 2.1.1 Fst analysis
+
+Genome-wide scans (20kbp):
+- Fst as a measure of divergence between Sm and Sp
+```vcftools --vcf VCF_FILE.vcf --weir-fst-pop Sm.txt --weir-fst-pop Sp.txt --fst-window-size 20000 --out Sm_Sp_20kbp```
+
+- Fst as a measure of conservation within Sm
+```vcftools --vcf VCF_FILE.vcf --weir-fst-pop Sm.txt --fst-window-size 20000 --out Sm_20kbp```
+
+- Fst as a measure of conservation within sp
+```vcftools --vcf VCF_FILE.vcf --weir-fst-pop Sp.txt --fst-window-size 20000 --out Sp_20kbp```
+
+
+### 2.1.2 Tajima's D analysis
+
+Genome-wide scans (20kbp):
+```vcftools --vcf VCF_FILE.vcf --TajimaD 20000 --out Sm_Sp_20kbp```
+
+
+### 2.1.3 Site-frequency spectrum
+
+### 2.2 Gene-based analysis
+
+### 2.2.1 McDonald-Kreitman tests
 Script to get Tsil and Trep: python?
 Script to SnIPRE: [pop_genome.R](https://github.com/Mass23/FormicaSelysiBalSel/blob/master/pop_genome.R)
 
 References:
 - https://academic.oup.com/mbe/article/31/7/1929/2925788
 - https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002806
+
+### 2.2.2 Hyphy on genes under positive selection?
