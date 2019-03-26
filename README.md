@@ -28,6 +28,10 @@ References:
 - Multiprocessing in python (v3.7): https://docs.python.org/3.7/library/multiprocessing.html
 
 ### 1.3 - Variants filtering
+
+```
+picard SortVcf I=contigs.vcf.gz O=sorted_contigs.vcf.gz SD=Fsel_M_b1v02a.dict MAX_RECORDS_IN_RAM=200000
+```
 1 - Keep only SNPs
 
 2 - Depth and quality:
